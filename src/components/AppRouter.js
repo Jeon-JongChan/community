@@ -4,6 +4,7 @@ import Auth from 'routes/Auth'
 import Temp from 'routes/Temp'
 import Profile from 'routes/Profile'
 import Main from 'routes/Main'
+import Home from 'routes/Home'
 import Navigation from 'components/Navigation'
 
 const AppRouter = ({isLoggedIn}) => {
@@ -16,6 +17,7 @@ const AppRouter = ({isLoggedIn}) => {
 					<Route exact path="/">
 						{/*<Temp/>*/}
 						<Main/>
+						<Home/>
 					</Route>
 					<Route exact path="/profile">
 						<Profile />
