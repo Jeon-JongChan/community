@@ -1,5 +1,19 @@
+ul {
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
 .container {
 	width : 1920px;
+	display :flex;
+	position : relative;
+	top : 300px;
+}
+.nav-menu {
+	display : flex;
+	position : relative;
 }
 .menu {
 	display: flex;
@@ -9,14 +23,19 @@
 	& > li {
 		display: flex;
 		flex-wrap: nowrap;
-		justify-content: center;
+		flex-direction: column;
+		justify-content: top;
 		align-items: center;
 		
 		position: relative;
+		
 		width: 120px;
-		border : 1px solid black;
+		margin:0.75px;
+		//border : 1px solid black;
 		a {
-			//width: inherit;
+			border : 1px solid black;
+			text-align: center;
+			width: inherit;
 		}
 	}
 	li:hover .sub-menu {
@@ -26,10 +45,14 @@
 }
 .sub-menu {
 	display: inline-block;
-	position : absolute;
+	width: inherit;
+	text-align: center;
 	margin : 0;
 	padding : 0;
 	list-style-type : none;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
 	//opacity: 0;
 	//visibility: hidden;
 	& > li {
@@ -39,4 +62,34 @@
 }
 nav {
 	display : flex;
+}
+.temp-img {
+	
+}
+// banner or slider
+.slider {
+	border: 1px solid red;
+	display: flex;
+	position: relative;
+	width: 600px;
+	height: 480px;
+	overflow: hidden;
+	ul {
+		display: flex;
+		position: absolute;
+		right: 80%;
+		width: inherit;
+		height: inherit;
+		margin: 0;
+		padding: 0;
+		li {
+			width: inherit;
+			height: inherit;
+			.slider-img {
+				width: inherit;
+				height: inherit;
+			}
+			
+		}
+	}
 }
