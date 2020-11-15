@@ -44,20 +44,15 @@ const Main = ({isLoggedIn}) => {
 			</nav>
 		</div>
 		{/*banner*/}
-		<div className="container">
+		<div className="slider-container" data-slider-idx="1" data-slider-cnt="2">
+			<button className="slider-prev">뒤</button>
 			<div className="slider">
 				<ul>
-					<li>
-						<div className="slider-img bg-black"></div>
-					</li>
-					<li>
-						<div className="slider-img bg-red"></div>
-					</li>
+					<li className="slider-img bg-black"></li>
+					<li className="slider-img bg-red"></li>
 				</ul>
 			</div>
 			<button className="slider-prev">앞</button>
-			<script>
-			</script>
 		</div>
 		</>
 	);
