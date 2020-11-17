@@ -64,7 +64,7 @@ const Auth = () => {
 		<span onClick={toggleAccount}>{newAccount ? "Sign In" : "Create New Acount"}</span>
 		<div>
 			<button name="google" onClick={onSocialClick}>Continue with Google</button>
-			<button name="github" onClick={onSocialClick}>>Continue with Github</button>
+			<button name="github" onClick={onSocialClick}>Continue with Github</button>
 		</div>
 	</div>
 )}
