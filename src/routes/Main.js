@@ -49,12 +49,12 @@ const Main = ({isLoggedIn}) => {
 		<div className="slider-container" data-slider-idx="1" data-slider-cnt="2">
 			<button className="slider-back">뒤</button>
 			<div className="slider">
-				<ul>
+				<ul data-idx="1">
 					<li className="slider-img bg-black"></li>
 					<li className="slider-img bg-red"></li>
 				</ul>
 			</div>
-			<button className="slider-prev" data-test="d"onClick={slider.move()}>앞이다</button>
+			<button className="slider-prev" data-test="d"onClick={slider.move}>앞이다</button>
 		</div>
 		</>
 	);

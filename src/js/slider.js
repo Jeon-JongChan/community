@@ -1,12 +1,13 @@
 const slider_func = {
-    move: (index) => { 
-        let slider_item = document.querySelector(".slider ul");
-        console.log(slider_item);
+    move: () => { 
+        let item = document.querySelector(".slider ul");
         let left = 0;
-        if(slider_item != null) {
-            left = (-1) * index * slider_item.offsetWidth;
-            console.log("slider_location :" + left);
-            slider_item.style.width = left;
+        if(item != null) {
+            let index = item.dataset.idx;
+            left = (-1) * item.offsetWidth * index;
+            console.log("slider_location :" + left+"/"+item.style.left+"index "+index);
+            
+            item.style.left = left+"px";
         }
         
     },
