@@ -26,8 +26,16 @@ const slider = {
                     slider.move(item,dataset.cnt,next);
                 }
             }
+<<<<<<< HEAD
+=======
+            left = (-1) * item.offsetWidth * index;
+            console.log("slider_location :" + left+"/"+item.style.left+"index "+index);
+            
+            //item.setAttribute("data-idx",""+)
+            //item.style.left = left+"px";
+>>>>>>> b512808ae507e0244d643f04240d4b6e14e3d079
         }
-        
+        */
     },
 }
 
