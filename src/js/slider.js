@@ -1,22 +1,34 @@
-const slider_func = {
-    move: (dir) => { 
+const slider = {
+    move: (item,cnt,next) => {
+        let left = (-1) * (item.offsetWidth / cnt) * (next-1);
+        console.log("slider_location :" + left+" / "+item.style.left+" index "+next);
+        
+        item.setAttribute("data-idx",next);
+        item.style.left = left+"px";
+    },
+    click: (dir) => { 
         let item = document.querySelector(".slider ul");
-        let left = 0;
+
         if(item != null) {
-            let index = item.dataset.idx;
-            if(idx >= 1) {
-                if(dir = 1){
-                    
+            let dataset = { ...item.dataset };
+            let next = dataset.idx;
+            if(dir == 1) {
+                console.log("right move");
+                if(dataset.idx < dataset.cnt){
+                    next = dataset.idx*1 + 1;
+                    slider.move(item,dataset.cnt,next);
                 }
             }
-            left = (-1) * item.offsetWidth * index;
-            console.log("slider_location :" + left+"/"+item.style.left+"index "+index);
-            
-            item.setAttribute("data-idx",""+)
-            item.style.left = left+"px";
+            else if(dir == -1) {
+                console.log("left move");
+                if(dataset.idx > 1){
+                    next = dataset.idx*1 - 1;
+                    slider.move(item,dataset.cnt,next);
+                }
+            }
         }
         
     },
 }
 
-export default slider_func
+export default slider

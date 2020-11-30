@@ -63,34 +63,3 @@ a {
 nav {
 	display : flex;
 }
-.temp-img {
-	
-}
-// banner or slider
-$slider-default-w: 600px;
-$slider-default-h: 480px;
-.slider-container {
-	display :flex;
-	position : relative;
-	top : 300px;
-	.slider {
-		border: 1px solid red;
-		display: flex;
-		position: relative;
-		width: $slider-default-w;
-		height: $slider-default-h;
-		overflow: hidden;
-		ul {
-			display: flex;
-			position: absolute;
-			width: $slider-default-w * 2;
-			height: 100%;
-			margin: 0;
-			padding: 0;
-			.slider-img {
-				width: 100%;
-				height: 100%;
-			}
-		}
-	}
-}
