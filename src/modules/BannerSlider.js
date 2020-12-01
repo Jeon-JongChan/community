@@ -2,11 +2,17 @@ import React, { useState } from "react";
 import "css/Slider.scss";
 import "css/public.scss";
 import slider from "js/slider.js";
+import debug from "debug.js";
 
-const BannerSlider = () => {
+const BannerSlider = ({
+	cnt,wh,images}) => {
     const slider_move = (dir) => {
 		slider.click(dir);
-    }
+		initSlider();
+	}
+	const initSlider = () => {
+		if(cnt = {}) debug("test",cnt);
+	}
     return (
         <>
         <div className="slider-container">

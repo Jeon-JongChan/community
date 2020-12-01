@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "css/App.scss";
 import "css/public.scss";
-import slider from "js/slider.js";
 import BannerSlider from "modules/BannerSlider"
 
 const Main = ({isLoggedIn}) => {
@@ -46,7 +45,7 @@ const Main = ({isLoggedIn}) => {
 			</nav>
 		</div>
 		{/*banner*/}
-		<BannerSlider></BannerSlider>
+		<BannerSlider cnt='3'></BannerSlider>
 		</>
 	);
 }
