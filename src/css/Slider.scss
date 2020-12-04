@@ -26,3 +26,7 @@ $slider-default-h: 480px;
 		}
 	}
 }
+
+.slider-ani {
+	transition: all 0.3s cubic-bezier(1,.01,.32,1);
+}

@@ -45,7 +45,7 @@ const Main = ({isLoggedIn}) => {
 			</nav>
 		</div>
 		{/*banner*/}
-		<BannerSlider cnt='3'></BannerSlider>
+		<BannerSlider></BannerSlider>
 		</>
 	);
 }

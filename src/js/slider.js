@@ -7,8 +7,8 @@ const slider = {
         item.setAttribute("data-idx",next);
         item.style.left = left+"px";
     },
-    click: (dir) => { 
-        let item = document.querySelector(".slider ul");
+    click: (dom,dir) => { 
+        let item = dom.querySelector(".slider ul");
 
         if(item != null) {
             let dataset = { ...item.dataset };
@@ -29,6 +29,9 @@ const slider = {
             }
         }
     },
+    auto :(slider_id) => {
+
+    }
 }
 
 export default slider
