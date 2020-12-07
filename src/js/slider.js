@@ -1,37 +1,55 @@
 import debug from "debug.js";
 const slider = {
-    move: (item,cnt,next) => {
-        let left = (-1) * (item.offsetWidth / cnt) * (next-1);
-        debug("slider_location :" + left+" / "+item.style.left+" index "+next);
-        
-        item.setAttribute("data-idx",next);
-        item.style.left = left+"px";
+    auto_interval:null,
+    move: (ul,cnt,next) => {
+        debug("slider move: cnt-"+cnt+" next-"+next);
+        if(next <= cnt && next >= 0) {
+            let left = (-1) * (ul.offsetWidth / cnt) * (next-1);
+            //debug("slider_location :" + left+" / "+ul.style.left+" index "+next);
+            ul.setAttribute("data-idx",next);
+            ul.style.left = left+"px";
+        }
+        else {
+            if(cnt >= 2 && next > cnt) {
+                
+            }
+        }
     },
     click: (dom,dir) => { 
-        let item = dom.querySelector(".slider ul");
+        let ul = dom.querySelector(".slider ul");
 
-        if(item != null) {
-            let dataset = { ...item.dataset };
+        if(ul != null) {
+            let dataset = { ...ul.dataset };
             let next = dataset.idx;
             if(dir == 1) {
                 debug("right move");
                 if(dataset.idx < dataset.cnt){
                     next = dataset.idx*1 + 1;
-                    slider.move(item,dataset.cnt,next);
+                    slider.move(ul,dataset.cnt,next);
                 }
             }
             else if(dir == -1) {
                 debug("left move");
                 if(dataset.idx > 1){
                     next = dataset.idx*1 - 1;
-                    slider.move(item,dataset.cnt,next);
+                    slider.move(ul,dataset.cnt,next);
                 }
             }
         }
     },
     auto :(slider_id) => {
-
-    }
+        let ul = document.querySelector("#"+slider_id+" ul");
+        slider.auto_interval = setInterval((ul)=>{
+            if(ul != null) {
+                let dataset = { ...ul.dataset };
+                let next = dataset.idx*1 + 1;
+                slider.move(ul,dataset.cnt,next);
+            }
+        },3000,ul)
+    },
+    stop : () => {
+        clearInterval(slider.auto_interval);
+    },
 }
 
 export default slider
