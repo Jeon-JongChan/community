@@ -23,7 +23,7 @@ const slider = {
                     debug("slider return init lot");
                 }
             } // 왼쪽 범위 바깥으로 이동
-            else 
+            
         }
     },
     click: (dom,dir) => { 

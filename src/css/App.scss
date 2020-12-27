@@ -67,3 +67,18 @@ a {
 nav {
 	display : flex;
 }
+//************************ login container **
+#login-container {
+	display: inline-block;
+	form {
+		display: flex;
+		flex-direction: column;
+	}
+	.login-buttons {
+		display: block;
+		input {
+			background-color: inherit;
+			border: 0;
+		}
+	}
+}
