@@ -9,15 +9,23 @@ a {
 	text-decoration: none;
 	color: black;
 }
+button {
+	background-color: inherit;
+	//border: 0;
+}
+input {
+	background-color: inherit;
+	border: 0;
+}
 .container {
 	width : 1920px;
 	display :flex;
 	position : relative;
-	top : 300px;
 }
 .nav-menu {
 	display : flex;
 	position : relative;
+	height: 40px;
 }
 .menu {
 	display: flex;
@@ -30,11 +38,9 @@ a {
 		flex-direction: column;
 		justify-content: top;
 		align-items: center;
-		
 		position: relative;
-		
 		width: 120px;
-		margin:0.75px;
+		padding:0.5px;
 		//border : 1px solid black;
 		a {
 			border : 1px solid black;
@@ -42,43 +48,81 @@ a {
 			width: inherit;
 		}
 	}
+	.sub-menu {
+		display: inline-block;
+		width: inherit;
+		text-align: center;
+		margin : 0;
+		padding : 0;
+		list-style-type : none;
+		border-left: 1px solid black;
+		border-right: 1px solid black;
+		border-bottom: 1px solid black;
+		opacity: 0;
+		visibility: hidden;
+		& > li {
+			padding : 0;
+			//border : 1px solid black;
+		}
+	}
 	li:hover .sub-menu {
 		opacity: 1;
 		visibility: visible;
 	}
 }
-.sub-menu {
-	display: inline-block;
-	width: inherit;
-	text-align: center;
-	margin : 0;
-	padding : 0;
-	list-style-type : none;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
-	border-bottom: 1px solid black;
-	//opacity: 0;
-	//visibility: hidden;
-	& > li {
-		padding : 0;
-		//border : 1px solid black;
-	}
-}
+
 nav {
 	display : flex;
 }
 //************************ login container **
 #login-container {
 	display: inline-block;
-	form {
-		display: flex;
-		flex-direction: column;
+	.login-article {
+		border: solid black 1px;
+		border-radius: 15px 15px 0 0;
+		border-width: 1px 1px 0 1px;
+		p {
+			text-align: center;
+		}
+		span {
+			display: block;
+			text-align: right;
+		}
 	}
-	.login-buttons {
+	form {
+		border: solid black 1px;
+		border-radius: 0 0 15px 15px;
+		padding: 10px;
+	}
+	.login {
+		display: flex;
+		flex-direction: row;
+
+		border: solid black 1px;
+		border-radius: 15px 15px 0 0;
+		border-width: 1px 1px 0 1px;
+		padding: 10px;
+		.login-input {
+			display: flex;
+			flex-direction: column;
+			width: 80%;
+		}
+		.login-button {
+			display: flex;
+			width: 20%;
+		}
+	}
+	
+	
+	.login-sub-buttons {
 		display: block;
-		input {
-			background-color: inherit;
-			border: 0;
+		border: solid black 1px;
+		border-radius: 0 0 15px 15px;
+		padding: 10px;
+		& > a {
+			display: inline-block;
+			width: 50%;
+			text-align: center;
 		}
 	}
 }

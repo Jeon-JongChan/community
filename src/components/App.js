@@ -18,10 +18,7 @@ function App() {
 	})
   	return (
     	<>
-		
 		{init ? <AppRouter isLoggedIn={isLoggedIn}/> : "Initializing..."}
-		<footer>&copy; Community {new Date().getFullYear()}</footer>
-    	
 		</>
 	);
 }
