@@ -4,6 +4,7 @@ img {
 }
 ul {
 	list-style-type: none;
+	padding: 0;
 }
 a {
 	text-decoration: none;
@@ -22,6 +23,8 @@ input {
 	display :flex;
 	position : relative;
 }
+//**************** menu
+$nav-height: 40px;
 .nav-menu {
 	display : flex;
 	position : relative;
@@ -33,19 +36,24 @@ input {
 	padding : 0;
 	list-style-type : none;
 	& > li {
+		/*
 		display: flex;
 		flex-wrap: nowrap;
 		flex-direction: column;
 		justify-content: top;
 		align-items: center;
+		*/
+		display: block;
 		position: relative;
 		width: 120px;
 		padding:0.5px;
 		//border : 1px solid black;
-		a {
+		& > a {
+			display: block;
 			border : 1px solid black;
 			text-align: center;
 			width: inherit;
+			height: $nav-height;
 		}
 	}
 	.sub-menu {

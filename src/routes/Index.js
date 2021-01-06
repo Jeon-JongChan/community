@@ -18,6 +18,18 @@ const Auth = () => {
 				wh={['600px','auto']}
 			/>
 		</div>
+		<div className="container">
+			<div className="article-list">
+				<div className="title">
+					리스트 박스 타이틀
+				</div>
+				<ul className="list">
+					<li className="litem">a</li>
+					<li className="litem">b</li>
+					<li className="litem">c</li>
+				</ul>
+			</div>
+		</div>
 	</>
 )}
 export default Auth;
