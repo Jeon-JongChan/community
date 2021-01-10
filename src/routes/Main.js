@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "css/App.scss";
 import "css/public.scss";
-import BannerSlider from "modules/BannerSlider"
+import BannerSlider from "components/BannerSlider"
 
 const Main = ({isLoggedIn}) => {
 	const container = {
