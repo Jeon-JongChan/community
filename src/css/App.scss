@@ -179,9 +179,15 @@ nav {
 		padding: 5px 15px 5px 15px;
 	}
 	.list {
-		display: flex;
+		width: 260px;
+		overflow: hidden;
+		.lframe {
+			display: flex;
+			width: inherit;
+		}
 		.litem {
-			width: 260px;
+			display: inline-table;
+			width: inherit;
 			padding: 0 15px 0 15px;
 		}
 		.litem:first-child {

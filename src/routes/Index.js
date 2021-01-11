@@ -5,6 +5,7 @@ import "css/public.scss";
 import BannerSlider from "components/BannerSlider";
 import LoginBox from "components/LoginBox";
 import ListBox from "components/ListBox";
+import SliderBox from "components/SliderBox";
 
 
 const Auth = () => {
@@ -25,27 +26,8 @@ const Auth = () => {
 			/>
 		</div>
 		<div className="container"> 
-			<div className="slider-box">
-				<div className="title">
-					슬라이더 박스 타이틀
-				</div>
-				<ul className="list">
-					<li className="litem">
-						<h2> 아이템 헤드입니다 </h2>
-						<p>
-							해당 아이템 본문입니다.<br/>
-							여기다 텍스트를 적으면 됩니다.<br/>
-						</p>
-					</li>
-					<li className="litem">
-						<h2> 아이템 헤드입니다 </h2>
-						<p>
-							해당 아이템 본문입니다.<br/>
-							여기다 텍스트를 적으면 됩니다.<br/>
-						</p>
-					</li>
-				</ul>
-			</div>
+			<SliderBox
+			/>
 		</div>
 	</>
 )}
