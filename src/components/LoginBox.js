@@ -3,7 +3,6 @@ import {Link} from "react-router-dom"
 import firebase, {authService} from "fbase"
 import "css/Slider.scss";
 import "css/public.scss";
-import debug from "debug.js";
 
 const LoginBox = (props) => {
     const [email, setEmail] = useState("");
@@ -29,9 +28,9 @@ const LoginBox = (props) => {
 				data = await authService.signInWithEmailAndPassword(email, password)
 			}
 			console.log(data);
-		} catch(error) {
-			console.log(error.message);
-			setError(error.message);
+		} catch(e) {
+			console.log(e.message);
+			setError(e.message);
 		}
 	};
 	const toggleAccount = () => {
@@ -43,7 +42,7 @@ const LoginBox = (props) => {
 			let provider;
 			if(name === "google") {
 				provider = new firebase.auth.GoogleAuthProvider();
-			} else if (name=="github") {
+			} else if (name === "github") {
 				provider = new firebase.auth.GithubAuthProvider();
 			}
 			const data = await authService.signInWithPopup(provider);

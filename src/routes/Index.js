@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {Link} from "react-router-dom"
+import React from "react";
+//import {Link} from "react-router-dom"
 import "css/App.scss";
 import "css/public.scss";
 import BannerSlider from "components/BannerSlider";
@@ -17,7 +17,7 @@ const Auth = () => {
 				margin={'0 20px 0 0'}
 			/>
 			<BannerSlider
-				wh={['600px','auto']}
+				wh={[600,'auto']}
 			/>
 		</div>
 		<div className="container"> 

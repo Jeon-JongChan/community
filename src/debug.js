@@ -1,5 +1,8 @@
 const debug = (...object) => {
-    console.log("Debug: ",object);
+    if(true) {
+        console.log("Debug: ",object);
+    }
 }
+
 
 export default debug;

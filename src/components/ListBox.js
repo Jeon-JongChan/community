@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {Link} from "react-router-dom"
 import "css/App.scss";
 import "css/public.scss";
@@ -15,10 +15,10 @@ const ListBox = (props) => {
     }
     const makeList = (list) => {
         return (
-            list.map((text)=>{
+            list.map((text, idx)=>{
                 return (
                 <>
-                <li className="litem">{text}</li>
+                <li className="litem" key={idx}>{text}</li>
                 <hr/>
                 </>
                 )

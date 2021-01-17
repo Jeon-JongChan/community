@@ -179,8 +179,12 @@ nav {
 		padding: 5px 15px 5px 15px;
 	}
 	.list {
-		width: 260px;
+		position: relative;
+		display: block;
 		overflow: hidden;
+		button {
+			position: absolute;
+		}
 		.lframe {
 			display: flex;
 			width: inherit;
