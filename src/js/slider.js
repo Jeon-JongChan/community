@@ -31,15 +31,16 @@ const slider = {
             frame.setAttribute("data-idx",next);
             frame.style.left = left+'px';
 
-            
             if( await slider.returnMove(frame, -1 * lastItemOff, cnt, 1) ) {
-                debug("slider return init lot");
+                debug("slider return init lot and move");
+                slider.move(frame,cnt,2);
             }
         } // 왼쪽 범위 바깥으로 이동
         else if (cnt > 1 && next < 1) {
-            let left = (-1) * lastItemOff;
-            if( await slider.returnMove(frame, -1 * lastItemOff, cnt, 1) ) {
+            debug("left limit overflow. next:",next," LAST :",-1 * lastItemOff);
+            if( await slider.returnMove(frame, -1 * lastItemOff, cnt, -1) ) {
                 debug("slider return init lot");
+                slider.move(frame,cnt,cnt-1);
             }
         }
     },
@@ -58,17 +59,13 @@ const slider = {
             let next = dataset.idx;
             if(dir === 1) {
                 debug("right move");
-                if(dataset.idx < dataset.cnt){
-                    next = dataset.idx*1 + 1;
-                    slider.move(sf,dataset.cnt,next);
-                }
+                next = dataset.idx*1 + 1;
+                slider.move(sf,dataset.cnt,next);
             }
             else if(dir === -1) {
-                debug("left move");
-                if(dataset.idx > 1){
-                    next = dataset.idx*1 - 1;
-                    slider.move(sf,dataset.cnt,next);
-                }
+                debug("left move :",dataset.idx*1 - 1," dir:",dir);
+                next = dataset.idx*1 - 1;
+                slider.move(sf,dataset.cnt,next);
             }
         }
 
@@ -88,24 +85,25 @@ const slider = {
         clearInterval(slider.auto_interval);
     },
     returnMove : (frame, dest, cnt, dir = 1) => {
+        debug("returnMove left : ",frame.style.left,frame.style.left.replace("px","")*1 > 0);
         if (dir === 1) {
             return new Promise(function(resolve, reject) {
                 //console.log("HI IM PROMICE",frame.style.left.replace("px",""),(dest),(frame.style.left.replace("px","") <= dest+"px"));
-                if(frame.style.left.replace("px","") <= dest){
+                if(frame.style.left.replace("px","")*1 <= dest){
                     frame.style.transitionDuration = '0s';
                     frame.style.left = 0;
                     frame.setAttribute("data-idx", 1);
-                    resolve(true)
+                    resolve(true);
                 }
             });
         }
         else if (dir === -1) {
             return new Promise(function(resolve, reject) {
-                if(frame.style.left.replace("px","") === 0){
+                if(frame.style.left.replace("px","")*1 > 0){
                     frame.style.transitionDuration = '0s';
-                    frame.style.left = dest;
+                    frame.style.left = dest+"px";
                     frame.setAttribute("data-idx", cnt);
-                    resolve(true)
+                    resolve(true);
                 }
             });
         }

@@ -25,7 +25,30 @@ $slider-default-h: 480px;
 		}
 	}
 }
-
+.sliderbox-container {
+	display :flex;
+	position : relative;
+	.slider {
+		border: 1px solid red;
+		display: flex;
+		position: relative;
+		width: $slider-default-w;
+		height: $slider-default-h;
+		overflow: hidden;
+		ul {
+			display: flex;
+			position: absolute;
+			width: $slider-default-w * 3;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			.litem {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
 .slider-ani {
 	transition: all 0.3s cubic-bezier(1,.01,.32,1);
 }
