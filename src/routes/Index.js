@@ -2,10 +2,10 @@ import React from "react";
 //import {Link} from "react-router-dom"
 import "css/App.scss";
 import "css/public.scss";
-import BannerSlider from "components/BannerSlider";
-import LoginBox from "components/LoginBox";
-import ListBox from "components/ListBox";
-import SliderBox from "components/SliderBox";
+import BannerSlider from "components/modules/BannerSlider";
+import LoginBox from "components/modules/LoginBox";
+import ListBox from "components/modules/ListBox";
+import SliderBox from "components/modules/SliderBox";
 
 
 const Auth = () => {

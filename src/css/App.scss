@@ -19,6 +19,12 @@ input {
 	background-color: inherit;
 	border: 0;
 }
+#root {
+	width: 1920px;
+}
+#master {
+	padding: 96px 200px;
+}
 .container {
 	width : 1920px;
 	display :flex;
@@ -27,9 +33,23 @@ input {
 //**************** menu
 $nav-height: 40px;
 .nav-menu {
+	$nav-padd: 115px;
+
 	display : flex;
 	position : relative;
-	height: 40px;
+	height: 120px;
+	padding: 10px $nav-padd;
+	.logo {
+		display: block;
+		position: relative;
+		height: inherit;
+		.logo-img {
+			display: block;
+			position: relative;
+			height: inherit;
+			width: inherit;
+		}
+	}
 }
 .menu {
 	display: flex;

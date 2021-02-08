@@ -6,6 +6,9 @@ import "css/public.scss";
 const Navigation = () => {
 	return (
 		<nav className="nav-menu">
+			<div className="logo">
+				<div className="logo-img bg-green" style={{width:'180px'}}></div>
+			</div>
 			<ul className="menu">
 				<li>
 					<Link to="/">Home</Link>
