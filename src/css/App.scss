@@ -30,73 +30,89 @@ input {
 	display :flex;
 	position : relative;
 }
-//**************** menu
-$nav-height: 40px;
+//**************** nav-menu
+
 .nav-menu {
+	$nav-h: 120px;
+	$menu-h: 100%;
 	$nav-padd: 115px;
+	$tot-menu-w: 1020px;
+	$menu-cnt: 6;
 
 	display : flex;
 	position : relative;
-	height: 120px;
-	padding: 10px $nav-padd;
+	height: $nav-h;
+	padding: 0 $nav-padd;
+	background-color: rgb(21,34,48);
 	.logo {
 		display: block;
 		position: relative;
-		height: inherit;
+		height: $nav-h - (10px * 2);
+		margin: 10px 0;
 		.logo-img {
 			display: block;
 			position: relative;
 			height: inherit;
-			width: inherit;
+			width: 270px;
+			height: 100%;
 		}
 	}
-}
-.menu {
-	display: flex;
-	margin : 0;
-	padding : 0;
-	list-style-type : none;
-	& > li {
-		/*
+
+	.menu {
 		display: flex;
-		flex-wrap: nowrap;
-		flex-direction: column;
-		justify-content: top;
-		align-items: center;
-		*/
-		display: block;
-		position: relative;
-		width: 120px;
-		padding:0.5px;
-		//border : 1px solid black;
-		& > a {
-			display: block;
-			border : 1px solid black;
-			text-align: center;
-			width: inherit;
-			height: $nav-height;
-		}
-	}
-	.sub-menu {
-		display: inline-block;
-		width: inherit;
-		text-align: center;
 		margin : 0;
 		padding : 0;
 		list-style-type : none;
-		border-left: 1px solid black;
-		border-right: 1px solid black;
-		border-bottom: 1px solid black;
-		opacity: 0;
-		visibility: hidden;
+		width: $tot-menu-w;
 		& > li {
-			padding : 0;
+			display: block;
+			position: relative;
+			width: $tot-menu-w / $menu-cnt;
+			padding:0.5px;
 			//border : 1px solid black;
+			& > a {
+				//border : 1px solid black;
+				font-size: 1.5rem;
+				color:#edc89c;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: $menu-h;
+				&:hover {
+					color: #e78b8c;
+				}
+			}
 		}
-	}
-	li:hover .sub-menu {
-		opacity: 1;
-		visibility: visible;
+		.sub-menu {
+			//border-left: 1px solid black;
+			//border-right: 1px solid black;
+			//border-bottom: 1px solid black;
+			position: relative;
+			z-index: 10;
+			display: inline-block;
+			width: inherit;
+			text-align: center;
+			margin : 0;
+			padding : 0;
+			list-style-type : none;
+			opacity: 0;
+			visibility: hidden;
+			& > li {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding : 0;
+				height: $nav-h / 2;
+				background-color: rgb(21,34,48);
+				color:#edc89c;
+				font-size: 1.2rem;
+				//border : 1px solid black;
+			}
+		}
+		li:hover .sub-menu {
+			opacity: 1;
+			visibility: visible;
+		}
 	}
 }
 

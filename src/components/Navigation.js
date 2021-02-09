@@ -7,11 +7,11 @@ const Navigation = () => {
 	return (
 		<nav className="nav-menu">
 			<div className="logo">
-				<div className="logo-img bg-green" style={{width:'180px'}}></div>
+				<div className="logo-img bg-green"></div>
 			</div>
 			<ul className="menu">
 				<li>
-					<Link to="/">Home</Link>
+					<Link to="/">세계관</Link>
 					<ul className="sub-menu">
 						<li>소메뉴1</li>
 						<li>소메뉴1</li>
@@ -20,21 +20,34 @@ const Navigation = () => {
 					</ul>
 				</li>
 				<li>
-					<a href='#'>메뉴1</a>
+					<a href='#'>가이드라인</a>
 					<ul className="sub-menu">
 						<li>소메뉴1</li>
 					</ul>
 				</li>
 				<li>
-					<a href='#'>메뉴1</a>
+					<a href='#'>레시무르 광장</a>
 					<ul className="sub-menu">
 						<li>소메뉴1</li>
 						<li>소메뉴1</li>
 					</ul>
 				</li>
 				<li>
-					<a href='#'>메뉴1</a>
+					<a href='#'>관계란</a>
 					<ul className="sub-menu">
+						<li>소메뉴1</li>
+					</ul>
+				</li>
+				<li>
+					<a href='#'>장터</a>
+					<ul className="sub-menu">
+						<li>소메뉴1</li>
+					</ul>
+				</li>
+				<li>
+					<a href='#'>QnA</a>
+					<ul className="sub-menu">
+						<li>소메뉴1</li>
 						<li>소메뉴1</li>
 					</ul>
 				</li>

@@ -9,7 +9,8 @@ import SliderBox from "components/modules/SliderBox";
 
 
 const Auth = () => {
-	
+	const css = {
+    }
 	return (
 	<>
 		<div className="container">
@@ -17,7 +18,7 @@ const Auth = () => {
 				margin={'0 20px 0 0'}
 			/>
 			<BannerSlider
-				wh={[600,'auto']}
+				wh={[1060,540]}
 			/>
 		</div>
 		<div className="container"> 
