@@ -54,20 +54,14 @@ const LoginBox = (props) => {
 
 	}
 	const css = {
-        container_margin : {
-			margin : props.margin
+        container : {
+			margin : props.margin,
+			width : 465,
 		}
     }
     return (
         <>
-        <div id="login-container" style={css.container_margin}>
-            <div className="login-article">
-                <p>
-					마음의 평화와 사랑과 힌은<br/>
-					위대한 리오쿠테르의 선물이다.
-				</p>
-				<span>모노라 속담</span>
-            </div>
+        <div id="login-container" style={css.container}>
 			<form onSubmit={onSubmit}>
 				<div className="login">
 					<div className="login-input">
