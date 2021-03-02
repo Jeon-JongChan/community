@@ -8,19 +8,27 @@ import debug from "debug.js";
 
 const BannerSlider = (props) => {
     let slider_cnt = (props.images.length > 1 ? props.images.length+1 : props.images.length);
+    let slider_w = props.wh[0] - (props.btnwh[0]*2);
     useEffect(()=>{
         slider.auto("#slider-"+props.id+" ul");
     });
     const css = {
-        slider: {
+        slider_container: {
             width:props.wh[0],
             height:props.wh[1]
         },
+        slider: {
+            width:slider_w,
+            height:props.wh[1]
+        },
+        btn: {
+            width:props.btnwh[0]
+        },
         ul: {
-            width: props.wh[0]*slider_cnt
+            width: slider_w*slider_cnt
         },
         li: {
-            width:props.wh[0]
+            width:slider_w
         }
     }
     const initSlider = (slider_cnt, images) => {
@@ -51,14 +59,20 @@ const BannerSlider = (props) => {
     
     return ( 
         <>
-        <div id={"slider-"+props.id}className="slider-container" >
-            <button className="slider-back" onClick={(e) => sliderBtn(e,-1)} > 뒤 </button> 
+        <div id={"slider-"+props.id}className="slider-container" style={css.slider_container}>
+            <button className="slider-btn slider-back" 
+                onClick={(e) => sliderBtn(e,-1)} style={css.btn}> 
+                뒤 
+            </button> 
             <div className="slider" style={css.slider}>
                 <ul className="slider-ani" style={css.ul} data-idx="1" data-cnt={slider_cnt}>
                     {initSlider(slider_cnt, props.images)}
                 </ul> 
             </div> 
-            <button className="slider-prev" onClick = {(e) => sliderBtn(e,1)}>앞이다</button> 
+            <button className="slider-btn slider-prev" 
+                onClick = {(e) => sliderBtn(e,1)} style={css.btn}>
+                앞
+            </button> 
         </div> 
         </>
     );
@@ -67,6 +81,7 @@ const BannerSlider = (props) => {
 BannerSlider.defaultProps = {
     images: ["bg-black","bg-green","bg-red"],
     wh: [600,150],
+    btnwh: [30,0],
     id:1
 }
 

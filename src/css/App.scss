@@ -30,6 +30,12 @@ input {
 	display :flex;
 	position : relative;
 }
+.container-main-left {
+	width: 465px;
+}
+.container-main-right {
+	width: 1055px;
+}
 //**************** nav-menu
 
 .nav-menu {
@@ -119,9 +125,14 @@ input {
 nav {
 	display : flex;
 }
+//*********** login ***
+.login-top {
+	height: 327px;
+}
 //************************ login container **
 #login-container {
 	display: inline-block;
+	height: 100%;
 	.login-article {
 		border: solid black 1px;
 		border-radius: 15px 15px 0 0;
@@ -135,22 +146,43 @@ nav {
 		}
 	}
 	form {
+		box-sizing: border-box;
 		border: solid black 1px;
-		border-radius: 0 0 15px 15px;
-		padding: 10px;
+		background-color: #703c1e;
+		//border-radius: 0 0 15px 15px;
+		padding: 27px 55px;
+		height: inherit;
 	}
 	.login {
 		display: flex;
 		flex-direction: row;
 
+		box-sizing: border-box;
 		border: solid black 1px;
-		
 		border-width: 1px 1px 0 1px;
-		padding: 10px;
+		border-radius: 15px 15px 0 0;
+		background-color: #56473d;
+		height: 120px;
+		padding: 12px;
 		.login-input {
+			box-sizing: border-box;
 			display: flex;
 			flex-direction: column;
 			width: 80%;
+			input {
+				height: 49%;
+				background-color: #1c0700;
+				border-radius: 10% 10% 10% 10% / 50% 50% 50% 50%;
+				padding: 5% 0 0 5%;
+
+				&::placeholder {
+					color: #4b2b11;
+					font-size: 2rem;
+				}
+			}
+			input[name="email"] {
+				margin: 0 0 2% 0;
+			}
 		}
 		.login-button {
 			display: flex;
@@ -163,6 +195,7 @@ nav {
 		display: block;
 		border: solid black 1px;
 		border-radius: 0 0 15px 15px;
+		background-color: #9c7b4e;
 		padding: 10px;
 		& > a {
 			display: inline-block;
@@ -172,36 +205,47 @@ nav {
 	}
 }
 /****** list box style */
-.article-list {
-	display: block;
-	border: solid black 1px;
-	border-radius: 15px 15px 15px 15px;
-
-	.title {
+.article-container {
+	display: inline-block;
+	box-sizing: border-box;
+	.article-list {
+		display: block;
+		height: 100%;
 		border: solid black 1px;
-		border-width: 0 0 1px 0;
-		padding: 5px 15px 5px 15px;
-	}
-	.list {
-		overflow-y : scroll;
-		-ms-overflow-style: none;
-		&::-webkit-scrollbar { 
-			display: none; 
-		}
-		.litem {
+		border-radius: 15px 15px 15px 15px;
+
+		.title {
 			//border: solid black 1px;
-			//border-width: 1px 0 0 0;
-			padding: 0 15px 0 15px;
+			//border-width: 0 0 1px 0;
+			padding: 5px 15px 5px 15px;
+			border-radius: 15px 15px 0 0;
+			background-color: #172231;
+			color: #e09879;
 		}
-		.litem:first-child {
-			border-width: 0;
+		.list {
+			overflow-y : scroll;
+			-ms-overflow-style: none;
+			&::-webkit-scrollbar { 
+				display: none; 
+			}
+			.litem {
+				//border: solid black 1px;
+				//border-width: 1px 0 0 0;
+				padding: 0 15px 0 15px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			.litem:first-child {
+				border-width: 0;
+			}
+			hr {
+				margin: 0;
+				width: 90%;
+				margin: 0 15px 0 15px;
+			}
+			
 		}
-		hr {
-			margin: 0;
-			width: 80%;
-			margin: 0 15px 0 15px;
-		}
-		
 	}
 }
 .slider-box {
