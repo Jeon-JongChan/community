@@ -8,7 +8,7 @@ const Navigation = () => {
 		<nav className="nav-menu">
 			<div className="logo">
 				<img className="logo-img" src="/community/images/logo.png"/>
-				<span className>미로고등학교 1-5</span>
+				<span className="site-title">미로고등학교 1-5</span>
 			</div>
 			<ul className="menu">
 				<li>
