@@ -54,27 +54,22 @@ const LoginBox = (props) => {
 
 	}
 	const css = {
-        container_margin : {
-			margin : props.margin
+        container : {
+			margin : props.margin,
+			width : props.wh[0],
+			height : props.wh[1]
 		}
     }
     return (
         <>
-        <div id="login-container" style={css.container_margin}>
-            <div className="login-article">
-                <p>
-					마음의 평화와 사랑과 힌은<br/>
-					위대한 리오쿠테르의 선물이다.
-				</p>
-				<span>모노라 속담</span>
-            </div>
+        <div id="login-container" style={css.container}>
 			<form onSubmit={onSubmit}>
 				<div className="login">
 					<div className="login-input">
-						<input name="email" type="text" placeholder="Email or ID" required value={email}
+						<input name="email" type="text" placeholder="ID" required value={email}
 							onChange={onChange}
 						/>
-						<input name="password" type="password" placeholder="password" required value={password}
+						<input name="password" type="password" placeholder="PW" required value={password}
 							onChange={onChange}	
 						/>
 					</div>
@@ -93,6 +88,7 @@ const LoginBox = (props) => {
     )
 }
 LoginBox.defaultProps = {
-    margin : '0 0 0 0'
+	margin : '0 0 0 0',
+	wh: [465,215]
 }
 export default LoginBox;

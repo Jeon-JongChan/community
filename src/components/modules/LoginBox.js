@@ -66,21 +66,22 @@ const LoginBox = (props) => {
 			<form onSubmit={onSubmit}>
 				<div className="login">
 					<div className="login-input">
-						<input name="email" type="text" placeholder="ID" required value={email}
+						<input name="email" type="text" placeholder="아이디" required value={email}
 							onChange={onChange}
 						/>
-						<input name="password" type="password" placeholder="PW" required value={password}
+						<input name="password" type="password" placeholder="비밀번호" required value={password}
 							onChange={onChange}	
 						/>
 					</div>
 					<div className="login-button">
-						<input type="submit" value="로그인"/>
+						<input type="submit" value="ENTER"/>
 					</div>
 				</div>
 				
 				<div className="login-sub-buttons">
-					<Link to="/">회원가입</Link>
-					<Link to="/">아이디</Link>
+					<Link className="sign-up" to="/">회원가입</Link>
+					<span>|</span>
+					<Link className="forgat" to="/">아이디/비밀번호 찾기</Link>
 				</div>
 			</form>
 		</div>
@@ -89,6 +90,6 @@ const LoginBox = (props) => {
 }
 LoginBox.defaultProps = {
 	margin : '0 0 0 0',
-	wh: [465,215]
+	wh: [465,180]
 }
 export default LoginBox;

@@ -7,7 +7,8 @@ const Navigation = () => {
 	return (
 		<nav className="nav-menu">
 			<div className="logo">
-				<div className="logo-img bg-green"></div>
+				<img className="logo-img" src="/community/images/logo.png"/>
+				<span className>미로고등학교 1-5</span>
 			</div>
 			<ul className="menu">
 				<li>

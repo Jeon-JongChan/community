@@ -1,0 +1,317 @@
+//**************** nav-menu
+
+.nav-menu {
+	$nav-h: 120px;
+	$menu-h: 100%;
+	$nav-padd: 35px;
+	$tot-menu-w: 1020px;
+	$menu-cnt: 6;
+
+	display : flex;
+	position : relative;
+	height: $nav-h;
+	padding: 0 0 0 $nav-padd;
+	background-color: rgb(21,34,48);
+	.logo {
+		display: flex;
+		position: relative;
+		height: $nav-h - (10px * 2);
+        margin: 10px 80px 10px 0;
+        width: 350px;
+        align-items: center;
+		.logo-img {
+			display: block;
+			position: relative;
+            height: inherit;
+            width: 33px;
+            height: 39px;
+            margin: 0 23px 9px 0;
+		}
+	}
+
+	.menu {
+		display: flex;
+		margin : 0;
+		padding : 0;
+		list-style-type : none;
+		width: $tot-menu-w;
+		& > li {
+			display: block;
+			position: relative;
+			width: $tot-menu-w / $menu-cnt;
+			padding:0.5px;
+			//border : 1px solid black;
+			& > a {
+				//border : 1px solid black;
+				font-size: 1.5rem;
+				color:#edc89c;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: $menu-h;
+				&:hover {
+					color: #e78b8c;
+				}
+			}
+		}
+		.sub-menu {
+			//border-left: 1px solid black;
+			//border-right: 1px solid black;
+			//border-bottom: 1px solid black;
+			position: relative;
+			z-index: 10;
+			display: inline-block;
+			width: inherit;
+			text-align: center;
+			margin : 0;
+			padding : 0;
+			list-style-type : none;
+			opacity: 0;
+			visibility: hidden;
+			& > li {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding : 0;
+				height: $nav-h / 2;
+				background-color: rgb(21,34,48);
+				color:#edc89c;
+				font-size: 1.2rem;
+				//border : 1px solid black;
+			}
+		}
+		li:hover .sub-menu {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+nav {
+	display : flex;
+}
+//*********** login ***
+.login-top {
+    box-sizing: border-box;
+    height: 365px;
+    padding: 42px 120px;
+}
+//************************ login container **
+#login-container {
+    display: inline-block;
+    font-family: "YEONSUNG",Arial, Helvetica, sans-serif;
+	height: 100%;
+	.login-article {
+		border: solid black 1px;
+		border-radius: 15px 15px 0 0;
+		border-width: 1px 1px 0 1px;
+		p {
+			text-align: center;
+		}
+		span {
+			display: block;
+			text-align: right;
+		}
+	}
+	form {
+		background-color: #703c1e;
+		background-image: url("/community/images/01main_login_ui.png");
+		box-sizing: border-box;
+		//border: solid black 1px;
+		//border-radius: 0 0 15px 15px;
+		padding: 27px 55px;
+		height: inherit;
+	}
+	.login {
+		display: flex;
+		flex-direction: row;
+		box-sizing: border-box;
+		height: 80px;
+		.login-input {
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			width: 75%;
+    		padding: 10px 10px 0 12px;
+			input {
+				background: transparent;
+				font-size: 1.2rem;
+				height: 49%;
+				&::placeholder {
+					background: transparent;
+                    color: #4b2b11;
+                    font-family: "YEONSUNG",Arial, Helvetica, sans-serif;
+					font-size: 1.4rem;
+					font-weight: 700;
+					line-height: 24px;
+				}
+			}
+			input[name="email"] {
+				margin: 0 0 2% 0;
+			}
+		}
+		.login-button {
+			position: relative;
+			display: flex;
+			width: 25%;
+			top: -15px;
+			input {
+				font-weight: 700;
+				font-size: 1.4rem;
+				color:white;
+				width: 100%;
+			}
+		}
+	}
+	
+	.login-sub-buttons {
+		display: block;
+		padding: 10px 10px 10px 14px;
+		& > a {
+			display: inline-block;
+			text-align: left;
+			font-size: 1rem;
+			font-weight: 700;
+			color: #6d6d6d;
+		}
+		.sign-up {
+			width: 16%;
+		}
+		.forgat {
+			padding-left: 2%;
+			width: 60%;
+		}
+		& > span {
+			position: relative;
+			font-weight: 700;
+			color: #6d6d6d;
+		}
+	}
+	/* login_style_one
+	.login {
+		padding: 12px;
+		border: solid black 1px;
+		border-width: 1px 1px 0 1px;
+		border-radius: 15px 15px 0 0;
+		background-color: #56473d;
+		.login-input {
+			input {
+				height: 49%;
+				padding: 5% 0 0 5%;
+				background-color: #1c0700;
+				border-radius: 10% 10% 10% 10% / 50% 50% 50% 50%;
+			}
+		}
+	}
+	.login-sub-buttons {
+		border: solid black 1px;
+		border-radius: 0 0 15px 15px;
+		background-color: #9c7b4e;
+		& > a {
+			display: inline-block;
+			width: 50%;
+			text-align: center;
+		}
+	}
+	*/
+}
+/****** list box style */
+.article-container {
+	display: inline-block;
+	box-sizing: border-box;
+	.article-list {
+		display: block;
+		height: 100%;
+		border: solid black 1px;
+		border-radius: 15px 15px 15px 15px;
+
+		.title {
+			//border: solid black 1px;
+			//border-width: 0 0 1px 0;
+			background-color: #172231;
+			border-radius: 15px 15px 0 0;
+            padding: 5px 15px 5px 15px;
+            font-weight: 700;
+            text-align: center;
+			color: #e09879;
+		}
+		.list {
+			overflow-y : scroll;
+			-ms-overflow-style: none;
+			&::-webkit-scrollbar { 
+				display: none; 
+			}
+			.litem {
+				//border: solid black 1px;
+				//border-width: 1px 0 0 0;
+				padding: 0 15px 0 15px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			.litem:first-child {
+				border-width: 0;
+			}
+			hr {
+				margin: 0;
+				width: 90%;
+				margin: 0 15px 0 15px;
+			}
+			
+        }
+        
+    }
+    /* 1 기본 조건 */
+    &.article-box {
+        margin: 0px;
+        padding: 0px 62px 0px 0px;
+        width: 100%;
+        height: 190px;
+
+        .title {
+            height: 38px;
+            line-height: 38px;
+            font-size: 19px;
+        }
+        .list {
+            height: 133px;
+        }
+    }
+}
+.slider-box {
+	display: block;
+	border: solid black 1px;
+	border-radius: 15px 15px 15px 15px;
+
+	.title {
+		border: solid black 1px;
+		border-width: 0 0 1px 0;
+		padding: 5px 15px 5px 15px;
+	}
+	.list {
+		position: relative;
+		display: block;
+		overflow: hidden;
+		button {
+			position: absolute;
+		}
+		.lframe {
+			display: flex;
+			width: inherit;
+		}
+		.litem {
+			display: inline-table;
+			width: inherit;
+			padding: 0 15px 0 15px;
+		}
+		.litem:first-child {
+			border-width: 0;
+		}
+		hr {
+			margin: 0;
+			width: 80%;
+			margin: 0 15px 0 15px;
+		}
+		
+	}
+}

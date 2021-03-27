@@ -19,7 +19,7 @@ const Auth = () => {
 		<div className="container">
 			<div className="container-main-left">
 				<div className="login-top">
-
+					<img src="/community/images/logo.png"/>
 				</div>
 				<LoginBox margin={'0 0 0 0'}/>
 			</div>
@@ -29,7 +29,15 @@ const Auth = () => {
 		</div>
 		<div className="container" style={css.tm_30}>
 			<div className="container-main-left">
-				<ListBox wh={['100%',190]} padding='0 62px 0 0'/>
+				<div className="article-container article-box">
+					<div className="article-list">
+						<div className="title" style={{color:"white"}}>
+							공지사항
+						</div>
+						<div className="list">
+						</div>
+					</div>
+				</div>
 			</div>
 			<div className="container-main-right">
 				<ListBox wh={[310,190]} margin='0 62px 0 0'/>
