@@ -15,6 +15,10 @@ button {
 	background-color: inherit;
 	//border: 0;
 }
+.button-clear {
+	border: 0;
+	padding: 0;
+}
 input {
 	background-color: inherit;
 	border: 0;
@@ -24,6 +28,7 @@ input {
 }
 #master {
 	padding: 96px 200px;
+	background-image: "/community/images/01main_bg.png";
 }
 .container {
 	width : 1920px;

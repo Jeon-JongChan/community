@@ -24,7 +24,7 @@ const Auth = () => {
 				<LoginBox margin={'0 0 0 0'}/>
 			</div>
 			<div className="container-main-right">
-				<BannerSlider wh={[1055,540]}/>
+				<BannerSlider wh={[1055,542]}/>
 			</div>
 		</div>
 		<div className="container" style={css.tm_30}>
@@ -36,10 +36,6 @@ const Auth = () => {
 				<ListBox wh={[310,190]} margin='0 62px 0 0'/>
 				<ListBox wh={[310,190]}/>
 			</div>
-		</div>
-		<div className="container"> 
-			<SliderBox
-			/>
 		</div>
 	</>
 )}
