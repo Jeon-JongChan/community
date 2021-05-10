@@ -1,42 +1,46 @@
 import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom"
-import firebase, {authService} from "fbase"
+import firebase, {authService, userService} from "fbase"
 import "css/Slider.scss";
 import "css/public.scss";
+import debug from "debug.js"
 
 const LoginBox = (props) => {
     const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [newAccount, setNetAccount] = useState(true);
+	const [login, setLogin] = useState(false);
+	const [profile_name, setProfileName] = useState("");
 	const [error, setError] = useState("");
+	useEffect (() => {
+		setLogin(props.isLogin);
+	})
 	const onChange = (event) => {
+		event.preventDefault();
 		const {target:{name, value}} = event;
-		console.log(event);
-		if (name === "email") {
-			setEmail(value);
-		} else if (name === "password") { 
-			setPassword(value);
-		}
+		if (name === "email") { setEmail(value); } 
+		else if (name === "password") { setPassword(value); }
 	};
 	const onSubmit = async (event) => {
 		event.preventDefault();
+		let data;
 		try {
-			let data
-			if(newAccount){
-				data = await authService.createUserWithEmailAndPassword(email, password)
-			} else {
-				data = await authService.signInWithEmailAndPassword(email, password)
+			data = await authService.signInWithEmail(email, password);
+			if(data) {
+				setProfileName(data.user.displayName)
 			}
-			console.log(data);
 		} catch(e) {
 			console.log(e.message);
 			setError(e.message);
 		}
 	};
-	const toggleAccount = () => {
-		setNetAccount((prev) => !prev);
+	const logout = (event) => {
+		event.preventDefault();
+		//debug("loginbox login : ",login);
+		if(login) {
+			authService.signOut();
+		};
 	}
-	const onSocialClick = async (event) => {
+	const onSocialClick = (event) => {
 		try {
 			const { target: {name}, } = event
 			let provider;
@@ -45,7 +49,7 @@ const LoginBox = (props) => {
 			} else if (name === "github") {
 				provider = new firebase.auth.GithubAuthProvider();
 			}
-			const data = await authService.signInWithPopup(provider);
+			const data = authService.signInWithPopup(provider);
 			console.log(data);
 		} catch(error)
 		{
@@ -66,22 +70,51 @@ const LoginBox = (props) => {
 			<form onSubmit={onSubmit}>
 				<div className="login">
 					<div className="login-input">
-						<input name="email" type="text" placeholder="아이디" required value={email}
-							onChange={onChange}
+					{login ? (
+						<>
+						<span className="login-line">1학년 1반 10번</span>
+						<span className="login-line">{profile_name}</span>
+						</>
+					) : (
+						<>
+						<input name="email" type="text" className="login-line" 
+							placeholder="아이디" required value={email} onChange={onChange}
 						/>
-						<input name="password" type="password" placeholder="비밀번호" required value={password}
-							onChange={onChange}	
+						<input name="password" type="password" className="login-line" 
+							placeholder="비밀번호" required value={password} onChange={onChange}	
 						/>
+						</>
+					)}
 					</div>
 					<div className="login-button">
-						<input type="submit" value="ENTER"/>
+						{login ? (
+							<>
+							<input type="button" value="Logout" onClick={logout}/>
+							</>
+						) : (
+							<>
+							<input type="submit" value="ENTER"/>
+							</>
+						)}
+						
 					</div>
 				</div>
 				
 				<div className="login-sub-buttons">
-					<Link className="sign-up" to="/">회원가입</Link>
-					<span>|</span>
-					<Link className="forgat" to="/">아이디/비밀번호 찾기</Link>
+					{login ? (
+						<>
+						<Link className="sub-first" to="/">프로필</Link>
+						<span> | </span>
+						<Link className="sub-two" to="/">쪽지</Link>
+						</>
+					) : (
+						<>
+						<Link className="sub-first">회원가입</Link>
+						<span> | </span>
+						<Link className="sub-two" to="/">아이디/비밀번호 찾기</Link>
+						</>
+					)}
+
 				</div>
 			</form>
 		</div>

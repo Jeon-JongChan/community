@@ -75,7 +75,7 @@
 			list-style-type : none;
 			opacity: 0;
 			visibility: hidden;
-			& > li {
+			& a,li {
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -126,7 +126,7 @@ nav {
 		box-sizing: border-box;
 		//border: solid black 1px;
 		//border-radius: 0 0 15px 15px;
-		padding: 27px 55px;
+		padding: 27px 55px 27px 60px;
 		height: inherit;
 	}
 	.login {
@@ -140,10 +140,12 @@ nav {
 			flex-direction: column;
 			width: 75%;
     		padding: 10px 10px 0 12px;
-			input {
+			.login-line {
 				background: transparent;
-				font-size: 1.2rem;
+				font-size: 1.5rem;
 				height: 49%;
+			}
+			input {
 				&::placeholder {
 					background: transparent;
                     color: #4b2b11;
@@ -177,15 +179,15 @@ nav {
 		& > a {
 			display: inline-block;
 			text-align: left;
-			font-size: 1rem;
+			font-size: 1.2rem;
 			font-weight: 700;
 			color: #6d6d6d;
 		}
-		.sign-up {
-			width: 16%;
+		.sub-first {
+			width: fit-content;
 		}
-		.forgat {
-			padding-left: 2%;
+		.sub-two {
+			//padding-left: 2%;
 			width: 60%;
 		}
 		& > span {
@@ -221,6 +223,9 @@ nav {
 		}
 	}
 	*/
+}
+.signIn {
+	background-color: rgba(0,0,0,0.8);
 }
 /****** list box style */
 .article-container {
@@ -321,4 +326,11 @@ nav {
 		}
 		
 	}
+}
+.board {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+
+	border: 1px solid black;
 }

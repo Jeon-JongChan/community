@@ -3,7 +3,12 @@ import {Link} from "react-router-dom"
 import "css/App.scss";
 import "css/public.scss";
 
-const Navigation = () => {
+const Navigation = (props) => {
+	const css = {
+		nav : {
+
+		}
+	}
 	return (
 		<nav className="nav-menu">
 			<div className="logo">
@@ -12,10 +17,8 @@ const Navigation = () => {
 			</div>
 			<ul className="menu">
 				<li>
-					<Link to="/">세계관</Link>
+					<Link to="/">학교소개</Link>
 					<ul className="sub-menu">
-						<li>소메뉴1</li>
-						<li>소메뉴1</li>
 						<li>소메뉴1</li>
 						<li>소메뉴1</li>
 					</ul>
@@ -27,20 +30,20 @@ const Navigation = () => {
 					</ul>
 				</li>
 				<li>
-					<a href='#'>레시무르 광장</a>
+					<a href='#'>1학년 5반</a>
 					<ul className="sub-menu">
-						<li>소메뉴1</li>
+						<li>현황판</li>
+						<li><Link to="/FreeBoard">로드비란</Link></li>
+					</ul>
+				</li>
+				<li>
+					<a href='#'>도서관</a>
+					<ul className="sub-menu">
 						<li>소메뉴1</li>
 					</ul>
 				</li>
 				<li>
-					<a href='#'>관계란</a>
-					<ul className="sub-menu">
-						<li>소메뉴1</li>
-					</ul>
-				</li>
-				<li>
-					<a href='#'>장터</a>
+					<a href='#'>매점</a>
 					<ul className="sub-menu">
 						<li>소메뉴1</li>
 					</ul>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-import Auth from 'routes/Auth'
+import Auth from 'components/backup/Auth'
 import Temp from 'routes/Temp'
 import Profile from 'routes/Profile'
 import Main from 'routes/Main'

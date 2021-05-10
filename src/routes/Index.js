@@ -8,26 +8,29 @@ import ListBox from "components/modules/ListBox";
 import SliderBox from "components/modules/SliderBox";
 
 
-const Auth = () => {
+const Index = (props) => {
 	const css = {
 		tm_30 : {
 			margin : '30px 0 0 0'
+		},
+		container : {
+			padding : props.padding
 		}
     }
 	return (
 	<>
-		<div className="container">
+		<div className="container" style={css.container}>
 			<div className="container-main-left">
 				<div className="login-top">
 					<img src="/community/images/logo.png"/>
 				</div>
-				<LoginBox margin={'0 0 0 0'}/>
+				<LoginBox isLogin={props.isLogin} margin={'0 0 0 0'}/>
 			</div>
 			<div className="container-main-right">
 				<BannerSlider wh={[1055,542]}/>
 			</div>
 		</div>
-		<div className="container" style={css.tm_30}>
+		<div className="container" style={Object.assign(css.tm_30,css.container)}>
 			<div className="container-main-left">
 				<div className="article-container article-box">
 					<div className="article-list">
@@ -47,4 +50,4 @@ const Auth = () => {
 		</div>
 	</>
 )}
-export default Auth;
+export default Index;

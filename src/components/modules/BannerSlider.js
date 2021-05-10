@@ -1,5 +1,5 @@
 import React, {
-    useEffect
+    useEffect, useState
 } from "react";
 import "css/Slider.scss";
 import "css/public.scss";
@@ -10,6 +10,7 @@ import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 //fa-caret-left
 const BannerSlider = (props) => {
+    const [init, setInit] = useState(false);
     let btnwh = sltype.btnwh[props.type-1];
     let slider_cnt = (props.images.length > 1 ? props.images.length+1 : props.images.length);
     let slider_w = sltype.slider_wh('w',props.type,props.wh,btnwh);
@@ -17,12 +18,15 @@ const BannerSlider = (props) => {
 
     useEffect(()=>{
         //slider.auto("#slider-"+props.id+" .slframe");
-        sltype.two.frame_ul = document.querySelector("#slider-"+props.id+" .sl-two");
-        sltype.two.item_w = sltype.two.frame_w(props.id) / 3;
-        sltype.two.makeItem(props.text,3);
-        sltype.two.initMove();
-        sltype.two.initAppendDom(sltype.two.view_cnt);
-        debug(sltype.two.frame_w(props.id),sltype.two.frame_ul," ",sltype.two.item_w);
+        if(!init){
+            sltype.two.frame_ul = document.querySelector("#slider-"+props.id+" .sl-two");
+            sltype.two.item_w = sltype.two.frame_w(props.id)/3;
+            sltype.two.makeItem(props.text,3);
+            sltype.two.initMove();
+            sltype.two.initAppendDom(sltype.two.view_cnt);
+            debug(sltype.two.frame_w(props.id),sltype.two.frame_ul," ",sltype.two.item_w);
+            setInit(true);
+        }
     });
     const css = {
         slider_container: {
@@ -47,7 +51,6 @@ const BannerSlider = (props) => {
     }
     const initSlider = (slider_cnt, images) => {
         let slider_item = [];
-        debug("start init");
         let idx
         for(idx=0 ; idx < props.images.length; idx++){
             slider_item.push(
@@ -92,7 +95,7 @@ const BannerSlider = (props) => {
                 </button>
                 <div className="sltype-two-frame">
                     <ul className="sl-two slider-ani" data-idx="1" data-cnt={sltype.two.view_cnt+2} data-view-cnt={sltype.two.view_cnt}
-                        style={{width: (sltype.two.item_w / 3) * props.text.length}}>
+                        style={{width: sltype.two.item_w * props.text.length}}>
                     </ul>
                 </div>
                 <button className="button-clear right" onClick={(e) => sliderBtn(e,1)}>
@@ -159,11 +162,11 @@ const sltype = {
         },
         initAppendDom: (view_cnt) => {
             let len = sltype.two.items.length;
-            for(var idx=(len-2); idx < len; idx++) {
+            for(var idx=(len-1); idx < len; idx++) {
                 sltype.two.frame_ul.appendChild(sltype.two.items[idx]);
             }
             
-            for(var idx=0 ; idx < view_cnt; idx++){
+            for(var idx=0 ; idx < view_cnt+1; idx++){
                 sltype.two.frame_ul.appendChild(sltype.two.items[idx]);
             }
         },
