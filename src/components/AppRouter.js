@@ -5,26 +5,32 @@ import FreeBoard from 'routes/FreeBoard'
 import Navigation from 'components/Navigation'
 
 const AppRouter = ({isLogin}) => {
-	const [index, setIndex] = useState(false);
 	return (
 		<Router>
 			<Switch>
 				<div id="master">
-					{index?(
-						
-					) : (
-						<Navigation/>
-					)}
+				<Route path={"/"} render={(props) => {
+					if(props.match.isExact) {
+						return (
+							<Navigation margin={'0 200px'}/> 
+						)
+					} else {
+						return (
+							<Navigation /> 
+						)
+					}
+				}}/>
+				
+					<Route exact path="/FreeBoard">
+						<FreeBoard/>
+					</Route>
+					<Redirect from="*" to="/" />
 					<Route exact path="/">
 						<Index 
 							isLogin={isLogin}
 							padding="0 200px"
 						/>
 					</Route>
-					<Route exact path="/FreeBoard">
-						<FreeBoard/>
-					</Route>
-					<Redirect from="*" to="/" />
 				</div>
 			</Switch>
 		</Router>

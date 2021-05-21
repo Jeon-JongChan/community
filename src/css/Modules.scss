@@ -328,9 +328,26 @@ nav {
 	}
 }
 .board {
+	display: flex;
 	box-sizing: border-box;
 	width: 100%;
 	height: 100%;
 
 	border: 1px solid black;
+	.board-left {
+		display: inline-block;
+		width: 50%;
+		text-align: center;
+		.board-img-frame {
+			display: inline-block;
+			max-height: 500px;
+		}
+	}
+	.board-right {
+		display: inline-block;
+		width: 50%;
+		.board-button {
+			float: right;
+		}
+	}
 }

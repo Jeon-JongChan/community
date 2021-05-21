@@ -16,7 +16,7 @@ const Index = (props) => {
 		container : {
 			padding : props.padding
 		}
-    }
+	}
 	return (
 	<>
 		<div className="container" style={css.container}>

@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import {Link} from "react-router-dom"
 import "css/App.scss";
 import "css/public.scss";
@@ -6,11 +6,13 @@ import "css/public.scss";
 const Navigation = (props) => {
 	const css = {
 		nav : {
-
+			margin: props.margin
 		}
 	}
+	console.log(css.nav);
+
 	return (
-		<nav className="nav-menu">
+		<nav className="nav-menu" style={css.nav}>
 			<div className="logo">
 				<img className="logo-img" src="/community/images/logo.png"/>
 				<span className="site-title">미로고등학교 1-5</span>
