@@ -1,4 +1,5 @@
 @import "Modules.scss";
+@import "mixin.scss";
 @font-face {
 	font-family: "NEXONlv1 Gothic";
 	font-weight: 400;
@@ -43,7 +44,8 @@ a {
 }
 button {
 	background-color: inherit;
-	//border: 0;
+	padding: 0;
+	border: 0;
 }
 .button-clear {
 	border: 0;
@@ -57,7 +59,8 @@ input:focus {
 	outline:none;
 }
 #root {
-	width: 1920px;
+	//width: 1920px;
+	width:100%;
 }
 #master {
 	//padding: 96px 200px;

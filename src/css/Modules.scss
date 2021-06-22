@@ -1,5 +1,5 @@
 //**************** nav-menu
-
+@import "mixin.scss";
 .nav-menu {
 	$nav-h: 120px;
 	$menu-h: 100%;
@@ -8,6 +8,7 @@
 	$menu-cnt: 6;
 
 	display : flex;
+	box-sizing: border-box;
 	position : relative;
 	height: $nav-h;
 	padding: 0 0 0 $nav-padd;
@@ -327,11 +328,16 @@ nav {
 		
 	}
 }
-.board {
+.free-board {
+	display: flex;
+	flex-direction: column;
+}
+.image-board {
 	display: flex;
 	box-sizing: border-box;
 	width: 100%;
 	height: 100%;
+	padding: 20px;
 
 	border: 1px solid black;
 	.board-left {
@@ -341,13 +347,33 @@ nav {
 		.board-img-frame {
 			display: inline-block;
 			max-height: 500px;
+			.board-img {
+				max-width: 180px;
+			}
 		}
 	}
 	.board-right {
-		display: inline-block;
+		display: flex;
+		flex-direction: column;
 		width: 50%;
-		.board-button {
-			float: right;
+		.main-text {
+			height: 100%;
+			p {
+				margin: 0;
+			}
+			.text-ellipse {
+				@include ellipse(5);
+			}
+		}
+		.board-buttons {
+			display: flex;
+			justify-content: flex-end;
+			.board-button {
+				border: solid black 1px;
+				padding: 10px;
+				width: 200px;
+				margin: 0 0 0 4px;
+			}
 		}
 	}
 }

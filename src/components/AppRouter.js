@@ -12,7 +12,10 @@ const AppRouter = ({isLogin}) => {
 				<Route path={"/"} render={(props) => {
 					if(props.match.isExact) {
 						return (
-							<Navigation margin={'0 200px'}/> 
+							<Navigation 
+								margin={'0 0 0 200px'}
+								width='1520px'
+							/> 
 						)
 					} else {
 						return (

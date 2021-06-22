@@ -6,7 +6,8 @@ import "css/public.scss";
 const Navigation = (props) => {
 	const css = {
 		nav : {
-			margin: props.margin
+			margin: props.margin,
+			width: props.width
 		}
 	}
 	console.log(css.nav);
