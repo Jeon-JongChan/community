@@ -14,7 +14,7 @@ const domManager = {
     property: (dom, properties) => {
         for(var v in properties) {
             dom.setAttribute(v,properties[v]);
-        }
+        }   
         return dom;
     }
 };

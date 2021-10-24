@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 //import {Link} from "react-router-dom"
 import "css/App.scss";
 import "css/public.scss";
@@ -7,10 +7,13 @@ import {textManager} from "js/public.js"
 
 const ImageBoard = (props) => {
 	const css = {
-    }
+	}
+	useEffect(() => {
+		isMore();
+	});
 	return (
 	<>
-		<section className="image-board">
+		<section className="image-board" data-idx={}>
 				<div className="board-left">
 					<div className="board-img-frame">
 						<img className="board-img" src="/community/images/logo.png"/>
@@ -29,7 +32,14 @@ const ImageBoard = (props) => {
 					</div>
 				</div>
 		</section>
+		{isMore()}
 	</>
-)}
+	)
+}
+const isMore = () => {
+	let dom = document.querySelector('.image-board');
+	console.log("ImageBoard :",dom);
+	return null;
+}
 
 export default ImageBoard;
